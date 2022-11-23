@@ -8,7 +8,9 @@ public class ID3D12Resource: ID3D12Pageable {
 
   public func GetDesc() throws -> D3D12_RESOURCE_DESC {
     return try perform(as: WinSDK.ID3D12Resource.self) { pThis in
-      pThis.pointee.lpVtbl.pointee.GetDesc(pThis)
+      var desc: D3D12_RESOURCE_DESC = D3D12_RESOURCE_DESC()
+      desc = pThis.pointee.lpVtbl.pointee.GetDesc(pThis)
+      return desc
     }
   }
 
