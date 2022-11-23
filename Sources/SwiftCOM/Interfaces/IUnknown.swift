@@ -89,7 +89,7 @@ extension IUnknown {
 }
 
 extension IUnknown {
-  func perform<Type, ResultType>(as type: Type.Type,
+  public func perform<Type, ResultType>(as type: Type.Type,
                                  _ body: (UnsafeMutablePointer<Type>) throws -> ResultType)
       throws -> ResultType {
     guard let pUnk = UnsafeMutableRawPointer(self.pUnk.borrow) else {
