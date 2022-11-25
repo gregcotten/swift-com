@@ -2,6 +2,7 @@
 
 import PackageDescription
 
+#if os(Windows)
 let SwiftCOM = Package(
   name: "SwiftCOM",
   products: [
@@ -21,3 +22,16 @@ let SwiftCOM = Package(
     ),
   ]
 )
+#else
+let SwiftCOMDummy = Package(
+  name: "SwiftCOM",
+  products: [
+    .library(name: "SwiftCOM", type: .dynamic, targets: ["SwiftCOMPlaceholder"]),
+  ],
+  targets: [
+    .target(
+      name: "SwiftCOMPlaceholder"
+    ),
+  ]
+)
+#endif
