@@ -2,11 +2,13 @@
 
 import PackageDescription
 
-#if os(Windows)
 let SwiftCOM = Package(
   name: "SwiftCOM",
+  platforms: [
+    .custom("windows", versionString: "10")
+  ],
   products: [
-    .library(name: "SwiftCOM", type: .dynamic, targets: ["SwiftCOM"]),
+    .library(name: "SwiftCOM", targets: ["SwiftCOM"]),
   ],
   targets: [
     .target(
@@ -22,8 +24,3 @@ let SwiftCOM = Package(
     ),
   ]
 )
-#else
-let SwiftCOM = Package(
-  name: "SwiftCOM"
-)
-#endif
