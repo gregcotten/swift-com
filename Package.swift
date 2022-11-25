@@ -12,8 +12,8 @@ let SwiftCOM = Package(
     .target(
       name: "SwiftCOM",
       linkerSettings: [
-        .linkedLibrary("Ole32"),
-        .linkedLibrary("PortableDeviceGuids"),
+        .linkedLibrary("Ole32", .when(platforms: [.windows])),
+        .linkedLibrary("PortableDeviceGuids", .when(platforms: [.windows])),
       ]
     ),
     .testTarget(
