@@ -2,7 +2,6 @@
 
 import PackageDescription
 
-#if os(Windows)
 let SwiftCOM = Package(
   name: "SwiftCOM",
   products: [
@@ -22,8 +21,3 @@ let SwiftCOM = Package(
     ),
   ]
 )
-#else
-let SwiftCOM = Package(
-  name: "SwiftCOM"
-)
-#endif
