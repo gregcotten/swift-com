@@ -6,7 +6,7 @@ import PackageDescription
 let SwiftCOM = Package(
   name: "SwiftCOM",
   products: [
-    .library(name: "SwiftCOM", targets: ["SwiftCOM"]),
+    .library(name: "SwiftCOM", type: .dynamic, targets: ["SwiftCOM"]),
   ],
   targets: [
     .target(
@@ -26,7 +26,7 @@ let SwiftCOM = Package(
 let SwiftCOMDummy = Package(
   name: "SwiftCOM",
   products: [
-    .library(name: "SwiftCOM", type: .dynamic, targets: ["SwiftCOMPlaceholder"]),
+    .library(name: "SwiftCOM", targets: ["SwiftCOMPlaceholder"]),
   ],
   targets: [
     .target(
